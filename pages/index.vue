@@ -1,5 +1,5 @@
 <template>
-  <section @click="count++">{{ count }}</section>
+  <hello-world></hello-world>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
