@@ -1,10 +1,8 @@
 import { defineNuxtConfig } from 'nuxt3'
-import { join } from 'path';
-
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
     meta: {
-        title: 'Nuxt3 UI',
+        title: process.env.npm_package_name,
         meta: [
             { charset: 'utf-8' },
             {
@@ -26,4 +24,11 @@ export default defineNuxtConfig({
         script: [],
     },
     buildModules: ['@nuxtjs/tailwindcss'],
+    css: ["assets/scss/elementPlus.scss"],
+    publicRuntimeConfig: {
+        NODE_ENV: process.env.NODE_ENV || ""
+    },
+    typescript: {
+        strict: true
+    }
 })
