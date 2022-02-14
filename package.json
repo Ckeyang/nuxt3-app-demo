@@ -1,6 +1,14 @@
 {
   "name": "my-nuxt3-app",
   "private": true,
+  "author": "ckeyang",
+  "version": "0.0.1",
+  "contributors": [{
+    "name": "ckeyang",
+    "email": "463650967@qq.com",
+    "url": "https://github.com/Ckeyang"
+  }],
+  "license": "ISC",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",

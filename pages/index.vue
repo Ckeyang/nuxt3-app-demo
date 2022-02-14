@@ -5,5 +5,5 @@
 import { ref } from "vue";
 const count = ref(0);
 const config = useRuntimeConfig();
-// console.log(config);
+console.log(config);
 </script>
