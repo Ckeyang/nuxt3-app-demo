@@ -24,7 +24,6 @@ export default defineNuxtConfig({
         script: [],
     },
     buildModules: ['@nuxtjs/tailwindcss'],
-    css: ["assets/scss/elementPlus.scss"],
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV || ""
     },

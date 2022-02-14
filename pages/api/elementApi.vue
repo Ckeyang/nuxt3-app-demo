@@ -77,7 +77,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-const value = ref("");
+const value = ref(null);
 const format = (percentage: any) =>
   percentage === 100 ? "Full" : `${percentage}%`;
 import {
