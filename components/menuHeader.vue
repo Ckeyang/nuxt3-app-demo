@@ -19,8 +19,7 @@
 const route = useRouter();
 console.log(route);
 const activekey = ref([""]);
-let handleSelect = ({ item, key, keys }) => {
-  console.log(item, key, keys);
+let handleSelect = ({ key }: any) => {
   //   console.log(router);
   //   console.log(key, keyPath);
   route.push(`/${key}`);
