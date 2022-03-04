@@ -1,29 +1,32 @@
 <template>
-  <el-menu
-    :default-active="activeIndex"
-    class="el-menu-demo"
-    mode="horizontal"
-    @select="handleSelect"
-  >
-    <el-menu-item index=""> 首页 </el-menu-item>
-    <el-menu-item index="about">关于</el-menu-item>
-    <el-sub-menu index="2-4">
-      <template #title>组件API</template>
-      <el-menu-item index="api/tailApi">tailwind css</el-menu-item>
-      <el-menu-item index="api/elementApi">element plus</el-menu-item>
-    </el-sub-menu>
-  </el-menu>
+  <a-layout-header>
+    <a-menu
+      v-model:selectedKeys="activekey"
+      class="a-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+    >
+      <a-menu-item key=""> 首页 </a-menu-item>
+      <a-menu-item key="about">关于</a-menu-item>
+      <a-sub-menu key="2-4">
+        <template #title>组件API</template>
+        <a-menu-item key="api/tailApi">tailwind css</a-menu-item>
+      </a-sub-menu>
+    </a-menu>
+  </a-layout-header>
 </template>
 <script lang="ts" setup>
 const route = useRouter();
-const activeIndex = ref("");
-let handleSelect = (key: string, keyPath: string[]) => {
+console.log(route);
+const activekey = ref([""]);
+let handleSelect = ({ item, key, keys }) => {
+  console.log(item, key, keys);
   //   console.log(router);
   //   console.log(key, keyPath);
   route.push(`/${key}`);
 };
 </script>
 <style lang="sass" scoped>
-.el-header
-    padding: 0
+.a-header
+  padding: 0
 </style>

@@ -23,6 +23,9 @@ export default defineNuxtConfig({
         link: [],
         script: [],
     },
+    plugins: [
+        '@/plugins/persistedstate.ts'
+    ],
     buildModules: ['@nuxtjs/tailwindcss'],
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV || ""

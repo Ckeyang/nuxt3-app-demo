@@ -19,16 +19,14 @@ const state = reactive({ user });
     <article class="tracking-wide leading-loose text-left">
       <h1>Hello,World!</h1>
       <article class="mt-8">
-        <h3>NUXT3 demo简介</h3>
+        <h3>
+          主框架:
+          <a class="text-blue-400" href="https://v3.nuxtjs.org/"> NUXT3</a>
+        </h3>
         <article class="mt-4">
           <p>
             UI 框架:
-            <a
-              class="text-blue-400"
-              href="https://element-plus.gitee.io/zh-CN/"
-            >
-              element-plus
-            </a>
+            <a class="text-blue-400" href="https://antdv.com/"> Antd-design </a>
           </p>
           <p>
             预编译css:
@@ -40,6 +38,7 @@ const state = reactive({ user });
               tailwindcss
             </a>
           </p>
+          <p>相信我，你会爱上这个框架的</p>
         </article>
       </article>
     </article>

@@ -1,11 +1,4 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "types": [
-      "element-plus/global",
-    ]
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }
