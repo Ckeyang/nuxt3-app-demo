@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios'
 import httpConfig from './httpConfig.js'
 import {
   notification
@@ -9,10 +9,10 @@ import {
 const service = axios.create(httpConfig)
 
 // 请求拦截器 ，主要是用来做header token设置
-service.interceptors.request.use(function (config) {
+service.interceptors.request.use(function (config: any) {
   config.headers['content-type'] = 'application/json;charset=utf-8'
   if (localStorage.getItem('token')) {
-    config.headers.Authorization = localStorage.getItem('token') || ''
+    config.headers['Authorization'] = localStorage.getItem('token') || ''
   }
   return config
 }, err => {
@@ -20,7 +20,7 @@ service.interceptors.request.use(function (config) {
 })
 
 // 响应拦截器
-service.interceptors.response.use(function (response) {
+service.interceptors.response.use(function (response: AxiosResponse) {
   if (response.data.code == 401) {
     /// token 过期处理方式
     /// 官网的推荐方式 试了没效果。 就采取 消息推送的方式 推送给header 去处理
@@ -45,31 +45,37 @@ service.interceptors.response.use(function (response) {
  * @param {*} params
  * @returns
  */
-const doGet = (url, params) => {
+const doGet = (url: string, params: any) => {
   return service.get(url, params)
 }
-const getUrlDownLoad = url => {
+const getUrlDownLoad = (url: string) => {
   return httpConfig.baseURL + url
 }
 /**
  *
- * @param {*} url
- * @param {*} params
+ * @param {string} url
+ * @param {any} params
  * @returns
  */
-const doPost = (url, params) => {
+const doPost = (url: string, params: any) => {
   return service.post(url, params)
 }
-const doPut = (url, params) => {
+/**
+ *
+ * @param {string} url
+ * @param {any} params
+ * @returns
+ */
+const doPut = (url: string, params: any) => {
   return service.put(url, params)
 }
 /**
  *
- * @param {*} url
- * @param {*} params
+ * @param {string} url
+ * @param {any} params
  * @returns
  */
-const doDelete = (url, params) => {
+const doDelete = (url: string, params: any) => {
   return service.delete(url, {
     data: params
   })
@@ -77,11 +83,13 @@ const doDelete = (url, params) => {
 
 /**
  * formdata 提交file文件
- * @param {*} url
- * @param {*} formdata
+ * @param {string} url
+ * @param {any} formdata
+ * @param {Function} progressFn
+ * @param {Function} cancel
  * @returns
  */
-const doUpdateFile = (url, formdata, progressFn = null, cancel = null) => {
+const doUpdateFile = (url: string, formdata: any, progressFn?: Function, cancel?: Function) => {
   return service({
     url,
     method: 'POST',
