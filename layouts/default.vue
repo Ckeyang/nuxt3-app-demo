@@ -1,6 +1,8 @@
 <template>
   <a-layout>
-    <menu-header></menu-header>
+    <a-affix :offset-top="0">
+      <menu-header></menu-header>
+    </a-affix>
     <a-layout-content> <slot /></a-layout-content>
   </a-layout>
 </template>

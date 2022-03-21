@@ -8,25 +8,18 @@ export default defineNuxtConfig({
             {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1, user-scalable=0',
-            },
-            {
-                hid: 'keywords',
-                name: 'keywords',
-                content: 'keywords',
-            },
-            {
-                hid: 'description',
-                name: 'description',
-                content: 'description',
-            },
+            }
         ],
         link: [],
         script: [],
     },
+    buildModules: [
+        '@pinia/nuxt',
+        '@nuxtjs/tailwindcss'
+    ],
     plugins: [
         '@/plugins/persistedstate.ts'
     ],
-    buildModules: ['@nuxtjs/tailwindcss'],
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV || ""
     },

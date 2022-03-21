@@ -1,0 +1,23 @@
+{
+  "publicPath": "/_nuxt/",
+  "all": [
+    "@vite/client",
+    "entry.mjs",
+    "assets/css/tailwind.css",
+    "components/menuHeader.vue?vue&type=style&index=0&scoped=true&lang.sass",
+    "layouts/default.vue?vue&type=style&index=0&scoped=true&lang.sass",
+    "components/helloWorld.vue?vue&type=style&index=0&scoped=true&lang.scss",
+    "node_modules/ant-design-vue/dist/antd.css"
+  ],
+  "initial": [
+    "@vite/client",
+    "entry.mjs",
+    "assets/css/tailwind.css",
+    "components/menuHeader.vue?vue&type=style&index=0&scoped=true&lang.sass",
+    "layouts/default.vue?vue&type=style&index=0&scoped=true&lang.sass",
+    "components/helloWorld.vue?vue&type=style&index=0&scoped=true&lang.scss",
+    "node_modules/ant-design-vue/dist/antd.css"
+  ],
+  "async": [],
+  "modules": {}
+}
