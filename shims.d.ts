@@ -13,3 +13,4 @@ declare interface Window {
 }
 declare module 'cookie'
 declare module 'js-cookie'
+declare module 'three'

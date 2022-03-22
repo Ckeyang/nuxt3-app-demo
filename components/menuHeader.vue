@@ -11,6 +11,7 @@
       <a-sub-menu key="2-4">
         <template #title>组件API</template>
         <a-menu-item key="api/tailApi">tailwind css</a-menu-item>
+        <a-menu-item key="api/threeApi">Three.js</a-menu-item>
         <a-menu-item key="api/adminApi">后台api</a-menu-item>
       </a-sub-menu>
     </a-menu>
