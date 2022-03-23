@@ -97,7 +97,7 @@ let demo3 = () => {
     500
   );
   camera.position.set(0, 0, 10);
-  camera.lookAt(0, 0, 0);
+  //   camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(dom.clientWidth, dom.clientHeight);
@@ -106,7 +106,6 @@ let demo3 = () => {
   const controls = new OrbitControls(camera, dom);
   controls.minDistance = 1;
   controls.maxDistance = 100;
-  controls.enablePan = false;
 
   const loader = new GLTFLoader();
 
