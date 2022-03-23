@@ -19,6 +19,8 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
 let demo1 = () => {
   let dom = document.getElementById("demo1");
   if (!dom) {
@@ -88,25 +90,57 @@ let demo3 = () => {
     setTimeout(demo3, 500);
     return;
   }
+  const camera = new THREE.PerspectiveCamera(
+    45,
+    dom.clientWidth / dom.clientHeight,
+    1,
+    500
+  );
+  camera.position.set(0, 0, 10);
+  camera.lookAt(0, 0, 0);
+
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(dom.clientWidth, dom.clientHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  dom.appendChild(renderer.domElement);
+  const controls = new OrbitControls(camera, dom);
+  controls.minDistance = 1;
+  controls.maxDistance = 100;
+  controls.enablePan = false;
+
   const loader = new GLTFLoader();
 
   const scene = new THREE.Scene();
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.4);
+  hemiLight.position.set(0, 20, 0);
+  scene.add(hemiLight);
+
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  dirLight.position.set(-3, 10, -10);
+  scene.add(dirLight);
   loader.load(
-    "/assets/gltf/test.gltf",
+    "/assets/gltf/Soldier.glb",
     function (gltf) {
       scene.add(gltf.scene);
+      //   renderer.render(scene, camera);
+      render();
     },
     undefined,
     function (error) {
       console.error(error);
     }
   );
+  let render = () => {
+    controls.update();
+    renderer.render(scene, camera);
+    requestAnimationFrame(render);
+  };
 };
 
 onMounted(() => {
   demo1();
   demo2();
-  //   demo3();
+  demo3();
 });
 </script>
 <style >
