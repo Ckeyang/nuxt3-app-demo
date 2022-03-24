@@ -9,9 +9,9 @@
         md:py-16
       "
     >
-      <section class="rounded-lg m-4" id="demo1"></section>
-      <section class="rounded-lg m-4" id="demo2"></section>
-      <section class="rounded-lg m-4" id="demo3"></section>
+      <section class="rounded-lg m-4 demobox" ref="one"></section>
+      <section class="rounded-lg m-4 demobox" ref="two"></section>
+      <section class="rounded-lg m-4 demobox" ref="three"></section>
     </section>
   </section>
 </template>
@@ -20,9 +20,12 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+const one = useState<HTMLElement | null>("one");
+const two = useState<HTMLElement | null>("two");
+const three = useState<HTMLElement | null>("three");
 
 let demo1 = () => {
-  let dom = document.getElementById("demo1");
+  let dom = one.value;
   if (!dom) {
     setTimeout(demo1, 500);
     return;
@@ -53,7 +56,7 @@ let demo1 = () => {
 };
 
 let demo2 = () => {
-  let dom = document.getElementById("demo2");
+  let dom = two.value;
   if (!dom) {
     setTimeout(demo2, 500);
     return;
@@ -85,7 +88,7 @@ let demo2 = () => {
 };
 
 let demo3 = () => {
-  let dom = document.getElementById("demo3");
+  let dom = three.value;
   if (!dom) {
     setTimeout(demo3, 500);
     return;
@@ -143,9 +146,7 @@ onMounted(() => {
 });
 </script>
 <style >
-#demo1,
-#demo2,
-#demo3 {
+.demobox {
   width: 400px;
   height: 400px;
 }
