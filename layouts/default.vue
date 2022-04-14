@@ -1,9 +1,14 @@
 <template>
   <a-layout>
-    <a-affix :offset-top="0">
-      <menu-header></menu-header>
-    </a-affix>
-    <a-layout-content> <slot /></a-layout-content>
+    <a-layout-sider class="h-screen border-r" style="background-color: #fff">
+      <my-menu />
+    </a-layout-sider>
+    <a-layout>
+      <a-layout-header> <my-header /> </a-layout-header>
+      <a-layout-content>
+        <slot />
+      </a-layout-content>
+    </a-layout>
   </a-layout>
 </template>
 <style lang="sass" scoped>

@@ -3,9 +3,13 @@ const routerStore = {
         return {
             token: '',
             router: '',
+            name: ''
         }
     },
     actions: {
+        setName(name: string) {
+            this.name = name;
+        },
         setRouter(path: string) {
             this.router = path;
         },
@@ -16,6 +20,7 @@ const routerStore = {
     },
 
     getters: {
+        getName: (state: any) => state.name,
         getRouter: (state: any) => state.router,
         getToken: (state: any) => {
             return state.token

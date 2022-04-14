@@ -13,6 +13,11 @@ export default defineNuxtConfig({
         link: [],
         script: [],
     },
+    build: {
+        transpile: [/echarts/],
+        cache: true,
+        parallel: true
+    },
     buildModules: [
         '@pinia/nuxt',
         '@nuxtjs/tailwindcss'

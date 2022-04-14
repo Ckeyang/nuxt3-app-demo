@@ -3,13 +3,11 @@
   "private": true,
   "author": "ckeyang",
   "version": "0.0.1",
-  "contributors": [
-    {
-      "name": "ckeyang",
-      "email": "463650967@qq.com",
-      "url": "https://github.com/Ckeyang"
-    }
-  ],
+  "contributors": [{
+    "name": "ckeyang",
+    "email": "463650967@qq.com",
+    "url": "https://github.com/Ckeyang"
+  }],
   "license": "ISC",
   "scripts": {
     "dev": "nuxi dev",
@@ -33,6 +31,8 @@
     "pinia-plugin-persistedstate-2": "^1.0.0",
     "postcss": "^8.4.6",
     "sass": "^1.49.7",
-    "three": "^0.138.3"
+    "three": "^0.138.3",
+    "echarts": "^5.2.2",
+    "vue-echarts": "^6.0.0"
   }
 }

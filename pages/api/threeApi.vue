@@ -140,9 +140,11 @@ let demo3 = () => {
 };
 
 onMounted(() => {
-  demo1();
-  demo2();
-  demo3();
+  setTimeout(() => {
+    demo1();
+    demo2();
+    demo3();
+  }, 500);
 });
 </script>
 <style >
